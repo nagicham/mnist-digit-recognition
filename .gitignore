@@ -13,5 +13,6 @@ env/
 .env.*
 
 # Data
-data/*
+dataset/*.pkl
+model/*.pkl
 !data/.gitkeep
