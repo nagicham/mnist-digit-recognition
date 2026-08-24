@@ -6,7 +6,7 @@ from model.deep_convnet import DeepConvNet
 from common.functions import softmax
 from preprocess import preprocess_image
 
-PARAMS_PATH = "model/params.pkl"
+PARAMS_PATH = "model/deep_convnet_params.pkl"
 
 _network = None
 
@@ -22,7 +22,7 @@ def predict_digit(image):
     network = load_network()
     x = preprocess_image(image)
 
-    scores = network.predict(x, train_Flag=False)
+    scores = network.predict(x, train_flg=False)
     # probs.shape -> (1, 10)
     probs = softmax(scores)[0]
 
