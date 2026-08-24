@@ -14,7 +14,7 @@ x_test = np.where(x_test > 0.5, 1.0, 0.0).astype(np.float32)
 
 network = DeepConvNet()  
 trainer = Trainer(network, x_train, t_train, x_test, t_test,
-                  epochs=20, mini_batch_size=100,
+                  epochs=5, mini_batch_size=100,
                   optimizer='Adam', optimizer_param={'lr':0.001},
                   evaluate_sample_num_per_epoch=1000)
 trainer.train()
