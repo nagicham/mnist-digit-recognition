@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handwritten Digit Recognition - DeepConvNet Scratch Demo</title>
+    <link rel="stylesheet" href="static/style.css">
+  </head>
+  <body>
+    <main>
+      <header>
+	<h1>Handwritten Digit Recognition</h1>
+	<p>DeepConvNet - NumPy scratch implementation, trained on MNIST</p>
+      </header>
+
+      <div class="layout">
+	<div>
+	  <div class="panel-label">01 - Write a digit</div>
+	  <div class="canvas-frame">
+	    <canvas id="drawCanvas" width="280" height="280"></canvas>
+	  </div>
+	  <div class="controls">
+	    <button id="clearBtn">Erase</button>
+	    <button id="predictBtn" class="primary">Predict</button>
+	  </div>
+	</div>
+
+	<div class="result-area">
+	  <div class="panel-label">02 - Result</div>
+	  <div id="resultContent">
+	    <p class="empty-state">Push "Predict"</p>
+	  </div>
+	</div>
+      </div>
+
+    </main>
+
+    <script src="static/script.js"></script>
+  </body>
+  </html>
