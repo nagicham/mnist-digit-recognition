@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Virtual environment
+.venv/
+
+# Data
+dataset/*.pkl
+model/*.pkl
+
+# Git
+.git/
+.gitignore
+
+tests/
+
+README.md
