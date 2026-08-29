@@ -13,15 +13,6 @@ def preprocess_image(image, invert=True):
     if invert:
         img = ImageOps.invert(img)
 
-    img = img.resize((CANVAS_SIZE, CANVAS_SIZE), Image.LANCZOS)
-
-    arr = np.asarray(img, dtype=np.float32) / 255.0
-    arr = np.where(arr > BINARIZE_THRESHOLD, 1.0, 0.0).astype(np.float32)
-    
-    return arr.reshape(1, 1, CANVAS_SIZE, CANVAS_SIZE)
-
-    """
-    
     # 3. 画素値を 0.0 ~ 1.0 にする
     arr = np.asarray(img, dtype=np.float32) / 255.0
 
@@ -56,8 +47,8 @@ def preprocess_image(image, invert=True):
     # 7. 正規化してから、学習時と同じ閾値で二値化
     final_arr = np.asarray(canvas, dtype=np.float32) / 255.0
     final_arr = np.where(final_arr > BINARIZE_THRESHOLD, 1.0, 0.0).astype(np.float32)
-    """
 
-
+    # 8. モデル入力の形(N, C, H, W)に整形
+    return final_arr.reshape(1, 1, CANVAS_SIZE, CANVAS_SIZE)
 
 
