@@ -8,7 +8,6 @@ __pycache__/
 
 # Data
 dataset/*.pkl
-model/*.pkl
 
 # Git
 .git/
